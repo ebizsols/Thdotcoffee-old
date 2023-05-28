@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="thedot.eateries.coffee" android-versionCode="22" version="2.2">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="thedot.eateries.coffee" android-versionCode="22" version="3.0.0">
   <name>The Dot Coffee App</name>
   <description>
         Order taking and table reservation App
@@ -8,16 +8,12 @@
         thedotcoffee.com
     </author>
   <content src="index.html"/>
-  <preference name="orientation" value="portrait"/>
   <preference name="AutoHideSplashScreen" value="false"/>
-  <preference name="SplashScreenDelay" value="8000"/>
-  <preference name="fullscreen" value="false"/>
   <preference name="ShowSplashScreenSpinner" value="false"/>
   <preference name="android-minSdkVersion" value="22"/>
   <preference name="android-targetSdkVersion" value="29"/>
   <!--<preference name="phonegap-version" value="cli-8.1.1" />-->
   <preference name="phonegap-version" value="cli-9.0.0"/>
-  <preference name="DisallowOverscroll" value="true"/>
   <preference name="WKWebViewOnly" value="true"/>
   <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine"/>
   <preference name="SplashMaintainAspectRatio" value="true"/>
@@ -56,8 +52,6 @@
   <!--REMOVE cordova-plugin-statusbar WHEN COMPILING TO IOS-->
   <gap:plugin name="cordova-plugin-statusbar" source="npm"/>
   <!--END PLUGIN-->
-  <access origin="*"/>
-  <access origin="tel:*" launch-external="yes"/>
   <gap:config-file platform="android" parent="/manifest">
     <supports-screens android:xlargeScreens="true" android:largeScreens="true" android:smallScreens="true"/>
     <application android:theme="@android:style/Theme.NoTitleBar">
@@ -84,12 +78,15 @@
     <splash density="land-xhdpi" src="res/screens/android/drawable-land-xhdpi-screen.png"/>
     <splash density="land-xxhdpi" src="res/screens/android/drawable-land-xxhdpi-screen.png"/>
     <splash density="land-xxxhdpi" src="res/screens/android/drawable-land-xxxhdpi-screen.png"/>
-    <splash density="port-ldpi" src="res/screens/android/drawable-port-ldpi-screen.png"/>
-    <splash density="port-mdpi" src="res/screens/android/drawable-port-mdpi-screen.png"/>
-    <splash density="port-hdpi" src="res/screens/android/drawable-port-hdpi-screen.png"/>
-    <splash density="port-xhdpi" src="res/screens/android/drawable-port-xhdpi-screen.png"/>
-    <splash density="port-xxhdpi" src="res/screens/android/drawable-port-xxhdpi-screen.png"/>
-    <splash density="port-xxxhdpi" src="res/screens/android/drawable-port-xxxhdpi-screen.png"/>
+    <preference name="AndroidXEnabled" value="false"/>
+    <preference name="AndroidWindowSplashScreenBackground" value="#468fff"/>
+    <splash src="res/screens/android/drawable-port-ldpi-screen.png" density="port-ldpi"/>
+    <splash src="res/screens/android/drawable-port-mdpi-screen.png" density="port-mdpi"/>
+    <splash src="res/screens/android/drawable-port-hdpi-screen.png" density="port-hdpi"/>
+    <splash src="res/screens/android/drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
+    <splash src="res/screens/android/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
+    <splash src="res/screens/android/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
+    <splash src="/res/android/screen/splash-mdpi.png" density="mdpi"/>
   </platform>
   <platform name="ios">
     <allow-intent href="tel:*"/>
@@ -170,4 +167,12 @@
   </platform>
   <preference name="WindowsStorePublisherName" value="My Name"/>
   <preference name="WindowsStoreIdentityName" value="ceb0e292-e2f2-9572-2e42-510e98c206ac"/>
+  <access origin="*"/>
+  <access origin="tel:*"/>
+  <preference name="KeepRunning" value="false"/>
+  <preference name="monaca:AndroidIsPackageNameSeparate" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="Orientation" value="default"/>
+  <preference name="SplashScreenDelay" value="8000"/>
+  <preference name="Fullscreen" value="false"/>
 </widget>
